@@ -12,7 +12,7 @@ assets/css/site.css     styles, light/dark themes, explainer marks
 assets/js/site.js       theme toggle, nav highlighting, news "show older", BibTeX copy, GitHub stars, experience Gantt
 assets/js/viz.js        the animated explainers (one Story per paper/project) + interwhen result charts
 assets/img/             profile photo, favicon, organization logos
-assets/resume.pdf       CV (linked as assets/resume.pdf?v=2026-08)
+assets/resume.pdf       CV (linked as assets/resume.pdf?v=2026-10)
 experience.html etc.    redirects from the old multi-page site to the matching section
 ```
 
