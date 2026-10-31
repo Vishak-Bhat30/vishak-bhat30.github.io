@@ -1,41 +1,45 @@
-# Vishak K Bhat - Personal Website
+# Vishak K Bhat — research website
 
-Static HTML, CSS, and JavaScript portfolio. No build step is required.
+A single-page academic homepage. It is static HTML, CSS, and JavaScript with no build step and no frameworks. Google Fonts is the only external request; the GitHub star count is an optional extra.
 
-## Local Preview
+Live at **https://vishak-bhat30.github.io/**
 
-Open [index.html](index.html) in a browser. Fonts, icons, and scroll animations use external CDNs and require an internet connection.
+## Layout
 
-## Content and Resume
+```
+index.html              all content (intro, news, publications, experience, projects, service & honors)
+assets/css/site.css     styles, light/dark themes, explainer marks
+assets/js/site.js       theme toggle, nav highlighting, news "show older", BibTeX copy, GitHub stars, experience Gantt
+assets/js/viz.js        the animated explainers (one Story per paper/project) + interwhen result charts
+assets/img/             profile photo, favicon, organization logos
+assets/resume.pdf       CV (linked as assets/resume.pdf?v=2026-08)
+experience.html etc.    redirects from the old multi-page site to the matching section
+```
 
-The portfolio content was updated from the August 2026 resume, available at [assets/resume.pdf](assets/resume.pdf).
+## Common edits
 
-- Education: Integrated M.Tech. in Mathematics and Computing, IIT (ISM) Dhanbad, May 2026; CGPA 8.85/10, rank 3.
-- Experience: Microsoft Research Intern to Research Fellow, interwhen, and updated research and industry results.
-- Research: interwhen, Genesis, and the GSoC muon-momentum GNN preprint. Review statuses follow the resume; interwhen's title and author list follow its current arXiv record.
-- Projects and achievements: multi-agent question-and-answer competition, Vesuvius ink detection, technical skills, and updated awards.
+- **News:** add an `<li class="news-item">` at the top of `#newsList` in `index.html`. Items with class `older` stay hidden until "Show older news" is clicked. Use `highlight` for a filled dot and `upcoming` for a dashed one.
+- **Publications:** copy an `<article class="paper">` block. The explainer is chosen by `data-viz="..."` on the `.viz-frame`. Each value maps to a function in `viz.js` (`interwhen`, `genesis`, `muon`). To add a paper without an explainer, delete the `.viz-frame` div.
+- **Experience:** each card is an `<li class="xp">` in `index.html`. The "At a glance" chart is built from the `rows` array in `site.js`. Keep both in sync, and update `NOW` in `site.js` when you refresh the site.
+- **CV:** replace `assets/resume.pdf` and bump the `?v=` query on the CV links in `index.html`.
 
-To update the resume again, replace [assets/resume.pdf](assets/resume.pdf) and update the `?v=2026-08` query on both resume links in [index.html](index.html). Also update the download filename there. The version query helps returning visitors retrieve the new PDF.
+## Explainers
 
-## Publish at the Root GitHub Pages Address
+Each explainer is a `Story`: a list of `{ title, text, run }` steps. The Story:
 
-Target address: **https://vishak-bhat30.github.io/**
+- plays when scrolled into view and pauses off-screen;
+- loops;
+- can be jumped to with the numbered buttons.
 
-GitHub requires a user-site repository to be named **vishak-bhat30.github.io**. Changing HTML or setting a custom domain does not remove the project path from the current repository's Pages address. A CNAME file is not needed.
+With `prefers-reduced-motion`, it shows the final state without animating. The interwhen result charts use the numbers from Tables 1 and 2 of the paper. Update `dumbbellChart` and `costChart` in `viz.js` if the camera-ready numbers change.
 
-1. Review and commit the local changes, then push them to the repository's `main` branch.
-2. In the repository's **Settings > General**, rename `Vishak_website` to `vishak-bhat30.github.io`. If that repository already exists in your account, use the existing root-site repository instead of overwriting it.
-3. In **Settings > Pages**, select **Deploy from a branch**, with branch **main** and folder **/ (root)**, then save. Keep **Custom domain** empty. The [.nojekyll](.nojekyll) marker preserves this as a plain static site.
-4. Update this local clone's remote after the GitHub rename:
+## Local preview
 
-	```sh
-	git remote set-url origin https://github.com/Vishak-Bhat30/vishak-bhat30.github.io.git
-	```
+```sh
+python3 -m http.server 8000
+# open http://localhost:8000
+```
 
-5. Wait for the Pages deployment to succeed, then check the homepage, every subpage, and both resume links at **https://vishak-bhat30.github.io/**. Publication can take up to 10 minutes.
+## Publishing
 
-All page, stylesheet, script, image, and resume paths are relative, so they work at both the old project path and the new root address.
-
-**Old links:** GitHub redirects renamed repository URLs, but not GitHub Pages project URLs. Links under `https://vishak-bhat30.github.io/Vishak_website/` may stop working. Update links on your profiles and other sites, or arrange explicit redirects before migration if those old addresses must remain available.
-
-References: [Creating a GitHub Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site) and [Renaming a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/renaming-a-repository).
+GitHub Pages serves the `main` branch of this repository from the root (`.nojekyll` disables Jekyll). Push to `main` and the site updates within a few minutes.

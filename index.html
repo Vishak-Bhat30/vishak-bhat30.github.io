@@ -1,252 +1,650 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vishak K Bhat — ML Researcher</title>
-  <meta name="description" content="Vishak K Bhat, Research Fellow at Microsoft Research India. Verifiable LLM reasoning, test-time scaling, causal discovery, and machine learning research.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vishak K Bhat — Research Fellow, Microsoft Research India</title>
+  <meta name="description" content="Vishak K Bhat is a Research Fellow at Microsoft Research India working on reliable and efficient LLM reasoning: test-time verification, steering reasoning models, and causal discovery.">
+  <meta name="author" content="Vishak K Bhat">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Vishak K Bhat — Research Fellow, Microsoft Research India">
+  <meta property="og:description" content="LLM reasoning, test-time verification, and causal discovery. interwhen (NeurIPS 2026).">
+  <meta property="og:image" content="assets/img/profile.jpg">
+  <meta name="theme-color" content="#fcfcfb" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121211" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 
-  <!-- Google Fonts -->
+  <script>
+    // Apply saved theme before paint to avoid a flash.
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
 
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-  <!-- AOS (Animate on Scroll) -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Vishak K Bhat",
+    "jobTitle": "Research Fellow",
+    "affiliation": { "@type": "Organization", "name": "Microsoft Research India" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "IIT (ISM) Dhanbad" },
+    "email": "mailto:vishak.bhat5@gmail.com",
+    "sameAs": [
+      "https://scholar.google.com/citations?user=MAqJcn0AAAAJ",
+      "https://github.com/Vishak-Bhat30",
+      "https://www.linkedin.com/in/vishak-k-bhat-807998227/",
+      "https://www.kaggle.com/vishakkbhat"
+    ]
+  }
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ========== STICKY NAV ========== -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="#hero" class="nav-logo">VKB</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
-      </button>
+  <!-- ===================== NAV ===================== -->
+  <header class="topbar" id="topbar">
+    <nav class="topbar-inner" aria-label="Primary">
+      <a class="brand" href="#top">Vishak K Bhat</a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#about">About</a></li>
-        <li><a href="experience.html">Experience</a></li>
-        <li><a href="research.html">Research</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="achievements.html">Achievements</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#service">Service &amp; Honors</a></li>
+        <li><a href="assets/resume.pdf?v=2026-08" target="_blank" rel="noopener">CV</a></li>
       </ul>
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-        <i class="fas fa-moon"></i>
+      <button class="icon-btn theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg>
       </button>
-    </div>
-  </nav>
-
-  <!-- ========== HERO SECTION ========== -->
-  <header class="hero" id="hero">
-    <div class="hero-bg-animation">
-      <div class="floating-shape shape-1"></div>
-      <div class="floating-shape shape-2"></div>
-      <div class="floating-shape shape-3"></div>
-      <div class="floating-shape shape-4"></div>
-    </div>
-    <div class="hero-content">
-      <div class="hero-image-wrapper" data-aos="zoom-in" data-aos-duration="800">
-        <img src="assets/1.jpg" alt="Vishak K Bhat" class="hero-image" />
-        <div class="hero-image-ring"></div>
-      </div>
-      <div class="hero-text" data-aos="fade-up" data-aos-delay="200">
-        <p class="hero-greeting">Hello, I'm</p>
-        <h1 class="hero-name">Vishak K Bhat</h1>
-        <div class="hero-typewriter">
-          <span class="typewriter-text" id="typewriter"></span><span class="typewriter-cursor">|</span>
-        </div>
-        <p class="hero-description">
-          Research Fellow at <strong>Microsoft Research India</strong>, working on reliable and efficient LLM reasoning. Integrated M.Tech. in Mathematics and Computing from <strong>IIT (ISM) Dhanbad</strong>, Class of 2026.
-        </p>
-        <div class="hero-cta">
-          <a href="#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Get in Touch</a>
-          <a href="assets/resume.pdf?v=2026-08" target="_blank" rel="noopener noreferrer" class="btn btn-outline"><i class="fas fa-file-alt"></i> Resume</a>
-        </div>
-        <div class="hero-socials">
-          <a href="https://github.com/Vishak-Bhat30" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/vishak-k-bhat-807998227/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          <a href="https://www.kaggle.com/vishakkbhat" target="_blank" aria-label="Kaggle"><i class="fab fa-kaggle"></i></a>
-          <a href="mailto:vishak.bhat5@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-        </div>
-      </div>
-    </div>
-    <a href="#about" class="scroll-indicator" aria-label="Scroll down">
-      <i class="fas fa-chevron-down"></i>
-    </a>
+    </nav>
   </header>
 
-  <main>
+  <main id="main">
 
-    <!-- ========== ABOUT SECTION ========== -->
-    <section id="about" class="section">
-      <div class="section-container">
-        <h2 class="section-title" data-aos="fade-up"><span class="section-number">01.</span> About Me</h2>
-        <div class="about-grid" data-aos="fade-up" data-aos-delay="100">
-          <div class="about-text">
-            <p>
-              I am a <strong>Research Fellow at Microsoft Research India</strong>, working on verifiable reasoning and test-time scaling in LLMs.
-              I completed my <strong>Integrated Master of Technology in Mathematics and Computing</strong> at
-              <strong>IIT (ISM) Dhanbad</strong> in <strong>May 2026</strong>, with a <strong>CGPA of 8.85/10</strong> and <strong>rank 3</strong>.
-              My research is mentored by
-              <a href="https://amitsharma.in/" target="_blank" class="mentor-link">Amit Sharma</a>,
-              <a href="https://www.microsoft.com/en-us/research/people/nagarajn/" target="_blank" class="mentor-link">Nagarajan Natarajan</a>, and
-              <a href="https://people.iith.ac.in/vineethnb/" target="_blank" class="mentor-link">Vineeth N. Balasubramanian</a>.
-            </p>
-            <p>
-              I designed and open-sourced <a href="https://github.com/microsoft/interwhen" target="_blank" rel="noopener noreferrer" class="mentor-link">interwhen</a>,
-              which verifies intermediate reasoning steps and steers LLM generation using <strong>asynchronous fork-and-verify reasoning</strong>.
-              I also worked on <strong>Genesis</strong>, an explainable, LLM-driven causal discovery framework, at Sony Research India.
-              My experience spans <strong>Computer Vision</strong>, <strong>NLP</strong>, <strong>Graph Neural Networks</strong>,
-              <strong>Reinforcement Learning</strong>, and <strong>Diffusion Models</strong>.
-            </p>
-            <p>
-              I aspire to pursue a <strong>Ph.D.</strong> focusing on <strong>LLM reasoning</strong>,
-              <strong>Computer Vision</strong>, causal discovery, and multimodal learning.
-            </p>
-            <div class="skill-tags">
-              <span class="tag">LLM Reasoning</span>
-              <span class="tag">Verified Reasoning</span>
-              <span class="tag">Computer Vision</span>
-              <span class="tag">Reinforcement Learning</span>
-              <span class="tag">Graph Neural Networks</span>
-              <span class="tag">Causal Discovery</span>
-              <span class="tag">Multimodal &amp; VLMs</span>
-              <span class="tag">Diffusion Models</span>
-            </div>
-          </div>
-          <div class="about-highlights">
-            <div class="highlight-card">
-              <div class="highlight-icon"><i class="fas fa-graduation-cap"></i></div>
-              <div class="highlight-number">Rank 3</div>
-              <div class="highlight-label">IIT (ISM) Dhanbad</div>
-            </div>
-            <div class="highlight-card">
-              <div class="highlight-icon"><i class="fas fa-file-alt"></i></div>
-              <div class="highlight-number">3</div>
-              <div class="highlight-label">Research Papers</div>
-            </div>
-            <div class="highlight-card">
-              <div class="highlight-icon"><i class="fas fa-medal"></i></div>
-              <div class="highlight-number">Top 0.1%</div>
-              <div class="highlight-label">Kaggle</div>
-            </div>
-            <div class="highlight-card">
-              <div class="highlight-icon"><i class="fas fa-microscope"></i></div>
-              <div class="highlight-number">MSR</div>
-              <div class="highlight-label">Research Fellow</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== EXPLORE SECTIONS ========== -->
-    <section class="section section-alt">
-      <div class="section-container">
-        <h2 class="section-title" data-aos="fade-up"><span class="section-number">02.</span> Explore</h2>
-        <div class="preview-grid" data-aos="fade-up">
-
-          <!-- Experience Preview -->
-          <a href="experience.html" class="preview-card" data-aos="fade-up" data-aos-delay="0">
-            <div class="preview-icon"><i class="fas fa-briefcase"></i></div>
-            <div class="preview-info">
-              <h3>Experience</h3>
-              <p>Research and industry roles at Microsoft Research, Sony Research, Swiggy, ML4SCI, and more.</p>
-            </div>
-            <div class="preview-arrow"><i class="fas fa-arrow-right"></i></div>
-          </a>
-
-          <!-- Research Preview -->
-          <a href="research.html" class="preview-card" data-aos="fade-up" data-aos-delay="75">
-            <div class="preview-icon"><i class="fas fa-flask"></i></div>
-            <div class="preview-info">
-              <h3>Publications &amp; Research</h3>
-              <p>interwhen, Genesis, and GNNs for muon momentum estimation, with publication and review statuses.</p>
-            </div>
-            <div class="preview-arrow"><i class="fas fa-arrow-right"></i></div>
-          </a>
-
-          <!-- Projects Preview -->
-          <a href="projects.html" class="preview-card" data-aos="fade-up" data-aos-delay="150">
-            <div class="preview-icon"><i class="fas fa-code"></i></div>
-            <div class="preview-info">
-              <h3>Projects</h3>
-              <p>Vesuvius ink detection, competing question-and-answer agents, PII classification, and Vision Transformers.</p>
-            </div>
-            <div class="preview-arrow"><i class="fas fa-arrow-right"></i></div>
-          </a>
-
-          <!-- Achievements Preview -->
-          <a href="achievements.html" class="preview-card" data-aos="fade-up" data-aos-delay="225">
-            <div class="preview-icon"><i class="fas fa-trophy"></i></div>
-            <div class="preview-info">
-              <h3>Achievements</h3>
-              <p>Kaggle Top 0.1% and 3 bronze medals, AMD AI Premier League, and Microsoft AgenticAI hackathon wins.</p>
-            </div>
-            <div class="preview-arrow"><i class="fas fa-arrow-right"></i></div>
-          </a>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== CONTACT SECTION ========== -->
-    <section id="contact" class="section">
-      <div class="section-container contact-section">
-        <h2 class="section-title" data-aos="fade-up"><span class="section-number">03.</span> Get In Touch</h2>
-        <p class="contact-subtitle" data-aos="fade-up" data-aos-delay="100">
-          I'm always open to discussing research opportunities, collaborations, or interesting ML problems.
-          Feel free to reach out!
+    <!-- ===================== INTRO ===================== -->
+    <section class="intro wrap" id="top">
+      <div class="intro-text">
+        <h1 class="name">Vishak K Bhat</h1>
+        <p class="role">
+          <img class="role-logo" src="assets/img/logos/microsoft.png" alt="" width="18" height="18">
+          Research Fellow · <a href="https://www.microsoft.com/en-us/research/lab/microsoft-research-india/" target="_blank" rel="noopener">Microsoft Research India</a>
         </p>
-        <div class="contact-cards" data-aos="fade-up" data-aos-delay="200">
-          <a href="mailto:vishak.bhat5@gmail.com" class="contact-card">
-            <i class="fas fa-envelope"></i>
-            <span>vishak.bhat5@gmail.com</span>
-          </a>
-          <a href="https://github.com/Vishak-Bhat30" target="_blank" class="contact-card">
-            <i class="fab fa-github"></i>
-            <span>Vishak-Bhat30</span>
-          </a>
-          <a href="https://www.linkedin.com/in/vishak-k-bhat-807998227/" target="_blank" class="contact-card">
-            <i class="fab fa-linkedin"></i>
-            <span>vishak-k-bhat</span>
-          </a>
-          <a href="https://www.kaggle.com/vishakkbhat" target="_blank" class="contact-card">
-            <i class="fab fa-kaggle"></i>
-            <span>vishakkbhat</span>
-          </a>
+
+        <p>
+          I work on making <strong>LLM reasoning reliable and efficient</strong>. I study how to verify a model's
+          <em>intermediate</em> reasoning at test time and steer it toward correct, policy-compliant behavior, without
+          paying for many sampled trajectories. I built
+          <a href="#paper-interwhen">interwhen</a> <span class="pill-inline">NeurIPS 2026</span>, a framework that runs verifiers
+          asynchronously alongside a single reasoning trajectory and intervenes only when something goes wrong.
+        </p>
+        <p>
+          My research is mentored by
+          <a href="https://amitsharma.in/" target="_blank" rel="noopener">Amit Sharma</a>,
+          <a href="https://www.microsoft.com/en-us/research/people/nagarajn/" target="_blank" rel="noopener">Nagarajan Natarajan</a>,
+          <a href="https://people.iith.ac.in/vineethnb/" target="_blank" rel="noopener">Vineeth N. Balasubramanian</a>, and
+          <a href="https://rakaposhi.eas.asu.edu/" target="_blank" rel="noopener">Subbarao Kambhampati</a>.
+          Earlier, I worked on LLM-driven causal discovery at Sony Research India and on graph neural networks for
+          particle physics with ML4SCI&nbsp;/&nbsp;CERN as a Google Summer of Code contributor. I graduated from
+          <strong>IIT (ISM) Dhanbad</strong> in 2026 with an Integrated M.Tech. in Mathematics &amp; Computing (rank&nbsp;3).
+        </p>
+        <p>
+          I aspire to pursue a Ph.D. on LLM reasoning, computer vision, causal discovery, and multimodal learning.
+        </p>
+
+        <ul class="link-row" aria-label="Profiles">
+          <li><a class="chip-link" href="mailto:vishak.bhat5@gmail.com">
+            <svg viewBox="0 0 24 24" class="ic ic-stroke" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>Email</a></li>
+          <li><a class="chip-link" href="assets/resume.pdf?v=2026-08" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" class="ic ic-stroke" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>CV</a></li>
+          <li><a class="chip-link" href="https://scholar.google.com/citations?user=MAqJcn0AAAAJ&amp;hl=en" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" class="ic" aria-hidden="true"><path d="M5.242 13.769 0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>Google Scholar</a></li>
+          <li><a class="chip-link" href="https://github.com/Vishak-Bhat30" target="_blank" rel="noopener">
+            <svg viewBox="0 0 16 16" class="ic" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a></li>
+          <li><a class="chip-link" href="https://www.linkedin.com/in/vishak-k-bhat-807998227/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" class="ic" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a></li>
+          <li><a class="chip-link" href="https://www.kaggle.com/vishakkbhat" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" class="ic" aria-hidden="true"><path d="M18.83 23.86c-.02.09-.12.14-.28.14h-3.14c-.19 0-.35-.08-.49-.25l-5.18-6.59-1.45 1.37v5.11c0 .24-.12.36-.35.36H5.51c-.24 0-.36-.12-.36-.36V.35c0-.23.12-.35.36-.35h2.43c.23 0 .35.12.35.35v14.35l6.2-6.27c.17-.17.33-.25.5-.25h3.24c.14 0 .24.06.28.18.05.15.04.26-.03.32l-6.56 6.34 6.84 8.51c.09.1.12.21.07.36"/></svg>Kaggle</a></li>
+        </ul>
+      </div>
+
+      <figure class="intro-photo">
+        <img src="assets/img/profile.jpg" alt="Portrait of Vishak K Bhat" width="720" height="720">
+      </figure>
+    </section>
+
+    <section class="wrap interests" aria-label="Research interests">
+      <span class="interests-label">Interests</span>
+      <ul class="tag-list">
+        <li>LLM reasoning</li><li>Test-time verification</li><li>Agentic AI</li>
+        <li>Causal discovery</li><li>Multimodal &amp; VLMs</li><li>Graph neural networks</li>
+      </ul>
+    </section>
+
+    <!-- ===================== NEWS ===================== -->
+    <section class="section wrap" id="news">
+      <h2 class="section-title">News</h2>
+      <ol class="news" id="newsList">
+        <li class="news-item upcoming">
+          <time datetime="2026-12">Dec 2026</time>
+          <div><span class="badge badge-accent">Upcoming</span> I'll be at <strong>NeurIPS 2026</strong> in <strong>Sydney, Australia</strong>. Happy to chat about test-time verification and reasoning!</div>
+        </li>
+        <li class="news-item">
+          <time datetime="2026-10">Oct 2026</time>
+          <div>Serving as a <strong>reviewer for ICLR 2027</strong>.</div>
+        </li>
+        <li class="news-item highlight">
+          <time datetime="2026-09">Sep 2026</time>
+          <div><a href="#paper-interwhen"><strong>interwhen</strong></a> accepted at <strong>NeurIPS 2026</strong>!</div>
+        </li>
+        <li class="news-item">
+          <time datetime="2026-05">May 2026</time>
+          <div>Graduated from <strong>IIT (ISM) Dhanbad</strong>: Integrated M.Tech. in Mathematics &amp; Computing, rank&nbsp;3 (CGPA 8.85/10).</div>
+        </li>
+        <li class="news-item">
+          <time datetime="2026-04">Apr 2026</time>
+          <div>Attended <strong>ICLR 2026</strong> in <strong>Rio de Janeiro, Brazil</strong>. interwhen appeared at the VerifAI-2 and LLM Reasoning workshops.</div>
+        </li>
+        <li class="news-item">
+          <time datetime="2026-03">Mar 2026</time>
+          <div>Our GSoC work, <a href="https://arxiv.org/abs/2603.06675" target="_blank" rel="noopener">GNN for Muon Particle Momentum Estimation</a>, is on arXiv.</div>
+        </li>
+        <li class="news-item">
+          <time datetime="2026-02">Feb 2026</time>
+          <div><a href="https://arxiv.org/abs/2602.11202" target="_blank" rel="noopener">interwhen</a> released on arXiv and open-sourced at <a href="https://github.com/microsoft/interwhen" target="_blank" rel="noopener">microsoft/interwhen</a>.</div>
+        </li>
+        <li class="news-item">
+          <time datetime="2025-11">Nov 2025</time>
+          <div>Joined <strong>Microsoft Research India</strong>, first as a research intern and now a Research Fellow.</div>
+        </li>
+        <li class="news-item older">
+          <time datetime="2025-07">Jul 2025</time>
+          <div>Won <strong>1st prize</strong> (₹1.5 lakh) at the AMD AI Premier League hackathon at IISc Bangalore.</div>
+        </li>
+        <li class="news-item older">
+          <time datetime="2025-06">Jun 2025</time>
+          <div>Started a research internship at <strong>Sony Research India</strong> on LLM-driven causal discovery.</div>
+        </li>
+        <li class="news-item older">
+          <time datetime="2024-08">Aug 2024</time>
+          <div>Joined <strong>Swiggy</strong> as a Data Scientist intern (bandits for surge pricing).</div>
+        </li>
+        <li class="news-item older">
+          <time datetime="2024-04">Apr 2024</time>
+          <div>Selected for <strong>Google Summer of Code 2024</strong> with ML4SCI (CERN CMS).</div>
+        </li>
+      </ol>
+      <button class="text-btn" id="newsToggle" type="button" aria-expanded="false" aria-controls="newsList">Show older news</button>
+    </section>
+
+    <!-- ===================== PUBLICATIONS ===================== -->
+    <section class="section wrap" id="publications">
+      <div class="section-head">
+        <h2 class="section-title">Publications</h2>
+        <p class="section-note">Each paper has a short animated explainer. Click the steps to walk through it, or hover for details.</p>
+      </div>
+
+      <!-- interwhen -->
+      <article class="paper featured" id="paper-interwhen">
+        <div class="viz-frame" data-viz="interwhen">
+          <div class="viz-tabs" role="tablist" aria-label="interwhen figures">
+            <button role="tab" aria-selected="true" data-tab="how">How it works</button>
+            <button role="tab" aria-selected="false" data-tab="agentic">Agentic results</button>
+            <button role="tab" aria-selected="false" data-tab="cost">Accuracy vs. cost</button>
+          </div>
+          <div class="viz-panel" data-panel="how">
+            <svg class="viz-svg" viewBox="0 0 600 330" role="img" aria-label="Animation: a reasoning model solves a maze while forked verifiers check its moves asynchronously; a wall violation is caught, the model is rewound to the fork point with feedback, and it reaches the goal."></svg>
+            <div class="viz-caption" aria-live="polite"></div>
+          </div>
+          <div class="viz-panel" data-panel="agentic" hidden>
+            <div class="chart" data-chart="dumbbell"></div>
+          </div>
+          <div class="viz-panel" data-panel="cost" hidden>
+            <div class="chart" data-chart="scatter"></div>
+          </div>
         </div>
-        <div class="contact-cta" data-aos="fade-up" data-aos-delay="300">
-          <a href="assets/resume.pdf?v=2026-08" download="Vishak_K_Bhat_Resume_August_2026.pdf" class="btn btn-primary btn-lg">
-            <i class="fas fa-download"></i> Download Resume
-          </a>
+
+        <div class="paper-body">
+          <div class="venues">
+            <span class="venue venue-main">NeurIPS 2026</span>
+            <span class="venue">ICLR 2026 Workshops · VerifAI-2 &amp; LLM Reasoning</span>
+          </div>
+          <h3 class="paper-title"><a href="https://arxiv.org/abs/2602.11202" target="_blank" rel="noopener">interwhen: A Generalizable Framework for Steering Reasoning Models with Test-time Verification</a></h3>
+          <p class="authors"><span class="me">Vishak K Bhat</span>, Prateek Chanda, Vijval Ekbote, Ashmit Khandelwal, Maitreyi Swaroop, Vineeth N. Balasubramanian, Subbarao Kambhampati, Nagarajan Natarajan, Amit Sharma</p>
+          <p class="tldr">
+            Reasoning models make mistakes <em>mid-way</em>, yet most verifiers either check only the final answer or
+            branch into many costly trajectories. interwhen watches a <strong>single</strong> trajectory. It periodically
+            <strong>forks</strong> the model to extract verifiable state and runs code or formal verifiers
+            <strong>asynchronously</strong>, so correct steps never wait. It steers the model with feedback only when a check fails.
+            Verifiers can be synthesized automatically from natural-language policies, including provably correct ones in Lean and z3.
+          </p>
+          <ul class="key-results">
+            <li><strong>32% → 87%</strong> task completion for Qwen3-30B on τ²-bench telecom, with no finetuning</li>
+            <li><strong>Near-perfect accuracy</strong> on logic and spatial tasks at a fraction of Best-of-N or Tree-of-Thoughts tokens</li>
+            <li><strong>No added latency</strong> on correct steps: verification runs in parallel with generation</li>
+          </ul>
+          <div class="paper-links">
+            <a class="btn-link" href="https://arxiv.org/abs/2602.11202" target="_blank" rel="noopener">arXiv</a>
+            <a class="btn-link" href="https://arxiv.org/pdf/2602.11202" target="_blank" rel="noopener">PDF</a>
+            <a class="btn-link" href="https://github.com/microsoft/interwhen" target="_blank" rel="noopener">Code <span class="gh-stars" data-repo="microsoft/interwhen" hidden></span></a>
+            <a class="btn-link" href="https://www.microsoft.com/en-us/research/publication/interwhen-a-generalizable-framework-for-verifiable-reasoning-with-test-time-monitors/" target="_blank" rel="noopener">MSR page</a>
+            <button class="btn-link bib-toggle" type="button" aria-expanded="false">BibTeX</button>
+          </div>
+          <div class="bibtex" hidden>
+<pre><code>@inproceedings{bhat2026interwhen,
+  title     = {interwhen: A Generalizable Framework for Steering
+               Reasoning Models with Test-time Verification},
+  author    = {Bhat, Vishak K and Chanda, Prateek and Ekbote, Vijval and
+               Khandelwal, Ashmit and Swaroop, Maitreyi and
+               Balasubramanian, Vineeth N. and Kambhampati, Subbarao and
+               Natarajan, Nagarajan and Sharma, Amit},
+  booktitle = {Advances in Neural Information Processing Systems},
+  year      = {2026}
+}</code></pre>
+            <button class="copy-btn" type="button">Copy</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Genesis -->
+      <article class="paper" id="paper-genesis">
+        <div class="viz-frame" data-viz="genesis">
+          <div class="viz-panel">
+            <svg class="viz-svg" viewBox="0 0 600 330" role="img" aria-label="Animation: on the Asia benchmark, data alone yields a partial ancestral graph with ambiguous edge marks; an LLM then orients each ambiguous edge and gives a written reason, producing an explainable causal graph."></svg>
+            <div class="viz-caption" aria-live="polite"></div>
+          </div>
+        </div>
+        <div class="paper-body">
+          <div class="venues">
+            <span class="venue venue-review">AAAI 2027 · Under review</span>
+          </div>
+          <h3 class="paper-title">Genesis: Towards Explainable Causal Discovery</h3>
+          <p class="authors"><span class="me">Vishak K Bhat</span>, Abhinav Thorat, Ravi Kumar Kolla, Niranjan Pedanekar</p>
+          <p class="tldr">
+            Statistical causal discovery leaves many edge directions <em>ambiguous</em>, while LLM-only discovery is hard to trust.
+            Genesis runs <strong>Partial Ancestral Graphs (PAGs)</strong> in parallel with <strong>LLM-guided search</strong>, so each
+            ambiguous edge is resolved with an explicit, human-readable reason. The result is a causal graph you can audit.
+            It builds on CausalOrder and LLM-CD and is benchmarked on Asia, Cancer, Earthquake, Child, and Survey.
+          </p>
+          <p class="viz-note">The figure is an illustration on the Asia network. Hover over any edge after the animation to read its rationale.</p>
+          <div class="paper-links">
+            <span class="btn-link disabled" aria-disabled="true">Paper coming soon</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- GNN muon -->
+      <article class="paper" id="paper-muon">
+        <div class="viz-frame" data-viz="muon">
+          <div class="viz-panel">
+            <svg class="viz-svg" viewBox="0 0 600 330" role="img" aria-label="Animation: a muon track bends through four CMS endcap muon stations; its hits become graph nodes, edges are built, messages pass between nodes, and a readout predicts transverse momentum. A curvier track means lower momentum."></svg>
+            <div class="viz-caption" aria-live="polite"></div>
+          </div>
+        </div>
+        <div class="paper-body">
+          <div class="venues">
+            <span class="venue">arXiv 2026</span>
+            <span class="venue">Google Summer of Code 2024 · ML4SCI</span>
+          </div>
+          <h3 class="paper-title"><a href="https://arxiv.org/abs/2603.06675" target="_blank" rel="noopener">GNN for Muon Particle Momentum Estimation</a></h3>
+          <p class="authors"><span class="me">Vishak K Bhat</span>, Eric A. F. Reinhardt, Sergei Gleyzer</p>
+          <p class="tldr">
+            The CMS experiment at the LHC must decide quickly which collisions to keep, and better muon momentum estimates mean
+            fewer false triggers. We turn muon-station hits into <strong>graphs</strong> using two construction methods and apply
+            <strong>GNNs</strong> with a custom message-passing layer. The GNN beats TabNet in MAE, and we show that node-feature
+            dimension is key to efficiency.
+          </p>
+          <ul class="key-results">
+            <li><strong>−14% MSE</strong> vs. a Transformer baseline (one architecture)</li>
+            <li><strong>27% faster inference</strong> (the other architecture)</li>
+          </ul>
+          <p class="viz-note">The figure is an illustration of the pipeline, not real detector data.</p>
+          <div class="paper-links">
+            <a class="btn-link" href="https://arxiv.org/abs/2603.06675" target="_blank" rel="noopener">arXiv</a>
+            <a class="btn-link" href="https://github.com/ML4SCI/CMS" target="_blank" rel="noopener">Code</a>
+            <button class="btn-link bib-toggle" type="button" aria-expanded="false">BibTeX</button>
+          </div>
+          <div class="bibtex" hidden>
+<pre><code>@article{bhat2026gnnmuon,
+  title   = {GNN For Muon Particle Momentum estimation},
+  author  = {Bhat, Vishak K and Reinhardt, Eric A. F. and Gleyzer, Sergei},
+  journal = {arXiv preprint arXiv:2603.06675},
+  year    = {2026}
+}</code></pre>
+            <button class="copy-btn" type="button">Copy</button>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===================== EXPERIENCE ===================== -->
+    <section class="section wrap" id="experience">
+      <h2 class="section-title">Experience</h2>
+
+      <div class="gantt-card">
+        <div class="gantt-head">
+          <span class="gantt-title">At a glance</span>
+          <span class="gantt-legend"><span class="sw sw-research"></span>Research <span class="sw sw-industry"></span>Industry <span class="sw sw-edu"></span>Education</span>
+        </div>
+        <div class="gantt" id="gantt" role="group" aria-label="Timeline of roles from 2023 to 2026"></div>
+      </div>
+
+      <ol class="xp-list">
+        <li class="xp current" id="xp-msr">
+          <div class="xp-logo"><img src="assets/img/logos/microsoft.png" alt="Microsoft" width="48" height="48"></div>
+          <div class="xp-card">
+            <div class="xp-top">
+              <div>
+                <h3 class="xp-org">Microsoft Research India</h3>
+                <p class="xp-role">Research Fellow <span class="muted">· previously Research Intern</span></p>
+              </div>
+              <div class="xp-meta"><span class="badge badge-live"><span class="live-dot"></span>Current</span><time>Nov 2025 – Present</time></div>
+            </div>
+            <p class="xp-mentor">Mentor: <a href="https://amitsharma.in/" target="_blank" rel="noopener">Amit Sharma</a></p>
+            <ul class="xp-points">
+              <li>Designed and open-sourced <a href="https://github.com/microsoft/interwhen" target="_blank" rel="noopener">interwhen</a> (NeurIPS 2026). It verifies <em>intermediate</em> reasoning steps and steers the model toward the right answer, instead of checking only the final output.</li>
+              <li>Introduced <strong>asynchronous fork-and-verify</strong> reasoning. Verifiers run in parallel with the main LLM stream, adding negligible latency and keeping total tokens (verification included) comparable to CoT.</li>
+              <li>Outperforms Tree of Thoughts, Best-of-N, Generate-Test, and CoT on agentic benchmarks (τ²-bench, Agent-SafetyBench, VitaBench) and non-agentic ones (Maze, SpatialMap, ZebraLogic, VERINA), from 3B to frontier models.</li>
+              <li>Extended interwhen to <strong>early stopping</strong>, which halts reasoning once the model is confident and cuts inference cost.</li>
+            </ul>
+            <ul class="tag-list small"><li>LLM reasoning</li><li>Test-time scaling</li><li>Verification</li><li>Agents</li><li>Open source</li></ul>
+          </div>
+        </li>
+
+        <li class="xp" id="xp-sony">
+          <div class="xp-logo"><img src="assets/img/logos/sony.svg" alt="Sony" width="48" height="48" class="wide-logo"></div>
+          <div class="xp-card">
+            <div class="xp-top">
+              <div>
+                <h3 class="xp-org">Sony Research India</h3>
+                <p class="xp-role">Research Intern</p>
+              </div>
+              <div class="xp-meta"><time>Jun 2025 – Nov 2025</time></div>
+            </div>
+            <ul class="xp-points">
+              <li>Built <a href="#paper-genesis">Genesis</a>, an explainable, LLM-driven causal discovery framework that improves on CausalOrder and LLM-CD.</li>
+              <li>Ran Partial Ancestral Graphs (PAGs) in parallel with LLM-guided search, benchmarked on Asia, Cancer, Earthquake, Child, and Survey.</li>
+            </ul>
+            <ul class="tag-list small"><li>Causal discovery</li><li>LLMs</li><li>PAG</li></ul>
+          </div>
+        </li>
+
+        <li class="xp" id="xp-swiggy">
+          <div class="xp-logo"><img src="assets/img/logos/swiggy.png" alt="Swiggy" width="48" height="48"></div>
+          <div class="xp-card">
+            <div class="xp-top">
+              <div>
+                <h3 class="xp-org">Swiggy</h3>
+                <p class="xp-role">Data Scientist Intern</p>
+              </div>
+              <div class="xp-meta"><time>Aug 2024 – May 2025</time></div>
+            </div>
+            <ul class="xp-points">
+              <li>Framed surge pricing as a <strong>multi-armed bandit</strong> solved with policy gradients, raising show-up rate by <strong>5%</strong> at no extra cost.</li>
+              <li>Designed a re-zoning algorithm that cut cross-zone orders by <strong>6%</strong>.</li>
+            </ul>
+            <ul class="tag-list small"><li>RL</li><li>Bandits</li><li>Optimization</li></ul>
+          </div>
+        </li>
+
+        <li class="xp" id="xp-gsoc">
+          <div class="xp-logo"><img src="assets/img/logos/gsoc.png" alt="Google Summer of Code" width="48" height="48"></div>
+          <div class="xp-card">
+            <div class="xp-top">
+              <div>
+                <h3 class="xp-org">Google Summer of Code · ML4SCI <span class="org-sub"><img src="assets/img/logos/cern.png" alt="" width="16" height="16"> CERN CMS</span></h3>
+                <p class="xp-role">GSoC Contributor</p>
+              </div>
+              <div class="xp-meta"><time>Apr 2024 – Sep 2024</time></div>
+            </div>
+            <ul class="xp-points">
+              <li>Implemented two GNN architectures that beat Transformers at predicting muon momentum: one with <strong>27% faster</strong> inference, the other with <strong>14% lower MSE</strong>.</li>
+              <li>Compared three ways of turning detector data into graphs and wrote a custom message-passing layer. <a href="https://github.com/ML4SCI/CMS" target="_blank" rel="noopener">Code ↗</a></li>
+            </ul>
+            <ul class="tag-list small"><li>GNNs</li><li>PyTorch</li><li>Physics ML</li></ul>
+          </div>
+        </li>
+
+        <li class="xp" id="xp-nyun">
+          <div class="xp-logo"><img src="assets/img/logos/nyunai.png" alt="NyunAI" width="48" height="48"></div>
+          <div class="xp-card">
+            <div class="xp-top">
+              <div>
+                <h3 class="xp-org">NyunAI</h3>
+                <p class="xp-role">Research Intern</p>
+              </div>
+              <div class="xp-meta"><time>May 2024 – Jun 2024</time></div>
+            </div>
+            <ul class="xp-points">
+              <li>Built <strong>Nyun-Llama3-62B</strong>, which has 12% fewer parameters than Llama-3-70B and matches or beats it on MMLU, Winogrande, BoolQ, HellaSwag, ARC-Challenge, and GSM8K.</li>
+            </ul>
+            <ul class="tag-list small"><li>LLM compression</li><li>Pruning</li></ul>
+          </div>
+        </li>
+
+        <li class="xp" id="xp-bosch">
+          <div class="xp-logo"><img src="assets/img/logos/bosch.png" alt="Bosch" width="48" height="48"></div>
+          <div class="xp-card">
+            <div class="xp-top">
+              <div>
+                <h3 class="xp-org">Bosch Global Software Technologies</h3>
+                <p class="xp-role">Computer Vision Research Intern</p>
+              </div>
+              <div class="xp-meta"><time>Jan 2024 – May 2024</time></div>
+            </div>
+            <ul class="xp-points">
+              <li>Semantic segmentation with MaskFormer and Mask2Former, reaching an <strong>F1 of 0.89</strong>.</li>
+              <li>Used GroundingDINO for object masks and Stable Diffusion inpainting to generate <strong>10,000</strong> synthetic obstacle images for finetuning.</li>
+            </ul>
+            <ul class="tag-list small"><li>Segmentation</li><li>Diffusion</li><li>Synthetic data</li></ul>
+          </div>
+        </li>
+
+        <li class="xp" id="xp-uit">
+          <div class="xp-logo"><img src="assets/img/logos/uit.png" alt="UiT The Arctic University of Norway" width="48" height="48"></div>
+          <div class="xp-card">
+            <div class="xp-top">
+              <div>
+                <h3 class="xp-org">UiT The Arctic University of Norway · Bio-AI Lab</h3>
+                <p class="xp-role">Research Intern</p>
+              </div>
+              <div class="xp-meta"><time>Oct 2023 – Dec 2023</time></div>
+            </div>
+            <ul class="xp-points">
+              <li>Converted variable-size document images into graphs for layout understanding, reaching an <strong>F1 of 0.92</strong> on a Bengali text dataset with graph classification.</li>
+            </ul>
+            <ul class="tag-list small"><li>GNNs</li><li>Document AI</li></ul>
+          </div>
+        </li>
+
+        <li class="xp xp-compact">
+          <div class="xp-logo duo">
+            <img src="assets/img/logos/simplyfi.png" alt="SimplyFI Softech" width="30" height="30">
+            <img src="assets/img/logos/patilkaki.png" alt="Patil Kaki" width="30" height="30">
+          </div>
+          <div class="xp-card">
+            <div class="xp-top">
+              <div>
+                <h3 class="xp-org">Earlier</h3>
+                <p class="xp-role">ML Engineer Intern at <strong>SimplyFI Softech</strong> (YOLO detection on CCTV feeds, document AI for banks) and at <strong>Patil Kaki</strong> (ARIMA/VARIMA turnover forecasting, RMSE 11.24).</p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ol>
+
+      <h3 class="subsection-title">Education</h3>
+      <div class="edu">
+        <div class="xp-logo"><img src="assets/img/logos/iitism.png" alt="IIT (ISM) Dhanbad" width="48" height="48"></div>
+        <div>
+          <div class="xp-top">
+            <div>
+              <h4 class="xp-org">Indian Institute of Technology (ISM) Dhanbad</h4>
+              <p class="xp-role">Integrated M.Tech., Mathematics &amp; Computing</p>
+            </div>
+            <div class="xp-meta"><time>2021 – May 2026</time></div>
+          </div>
+          <div class="edu-stats">
+            <div><span class="stat">8.85<small>/10</small></span><span class="stat-label">CGPA</span></div>
+            <div><span class="stat">3<sup>rd</sup></span><span class="stat-label">Department rank</span></div>
+            <div><span class="stat">Lead</span><span class="stat-label">ML Division, CyberLabs</span></div>
+          </div>
+          <p class="edu-course"><span class="muted">Coursework:</span> Probability &amp; Statistics, Linear Algebra, Optimization Techniques, Numerical Optimization, Data Mining, Data Structures &amp; Algorithms, Computational Finance.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section class="section wrap" id="projects">
+      <h2 class="section-title">Projects</h2>
+      <div class="project-grid">
+
+        <article class="project">
+          <div class="viz-frame small" data-viz="vesuvius">
+            <div class="viz-panel">
+              <canvas class="viz-canvas" width="360" height="200" aria-label="Animation: a sliding U-Net window scans a carbonized papyrus scan and reveals hidden ink letters."></canvas>
+              <div class="viz-caption" aria-live="polite"></div>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-head">
+              <h3>Vesuvius Challenge: Ink Detection</h3>
+              <span class="medal medal-bronze">Kaggle bronze</span>
+            </div>
+            <p>Detecting ink in 3D X-ray scans of carbonized Herculaneum papyri, where ink is invisible to the eye. I trained U-Nets with ResNet, DenseNet, SE-ResNet, VGG, and Inception backbones and combined them with ensembling and test-time augmentation.</p>
+            <ul class="metric-row"><li><b>0.74</b> F<sub>0.5</sub></li><li><b>5</b> backbones</li><li><b>TTA</b> ensemble</li></ul>
+            <div class="project-foot">
+              <ul class="tag-list small"><li>Segmentation</li><li>U-Net</li><li>PyTorch</li></ul>
+              <a class="btn-link" href="https://github.com/Vishak-Bhat30/3D_image_segmentation" target="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="viz-frame small" data-viz="qa">
+            <div class="viz-panel">
+              <svg class="viz-svg" viewBox="0 0 360 200" role="img" aria-label="Animation: a question agent and an answer agent face off in rounds, with a judge scoring each answer, while the training loop cycles through SFT, GRPO, and self-play."></svg>
+              <div class="viz-caption" aria-live="polite"></div>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-head">
+              <h3>Question vs. Answer Agents</h3>
+              <span class="medal medal-gold">1st place</span>
+            </div>
+            <p>Competing LLM agents for a head-to-head tournament (AMD AI Premier League, IISc). A Q-agent writes hard puzzles and an A-agent solves them. I improved both with SFT, GRPO, and self-play, plus curated synthetic data for reasoning accuracy and strict output formats.</p>
+            <ul class="metric-row"><li><b>1st</b> of all teams</li><li><b>₹1.5L</b> prize</li><li><b>GRPO</b> + self-play</li></ul>
+            <div class="project-foot">
+              <ul class="tag-list small"><li>Multi-agent</li><li>RL</li><li>LLMs</li></ul>
+              <a class="btn-link" href="https://github.com/Vishak-Bhat30/AMD-AI-Premier-League" target="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="viz-frame small" data-viz="pii">
+            <div class="viz-panel">
+              <div class="pii-stage" aria-label="Animation: a model scans text and tags names, emails, phone numbers, URLs, and IDs as personal information."></div>
+              <div class="viz-caption" aria-live="polite"></div>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-head">
+              <h3>PII Detection &amp; Classification</h3>
+            </div>
+            <p>Finetuned BERT to find personally identifiable information with a masked-LM objective, then finetuned it again to classify each span's PII type.</p>
+            <ul class="metric-row"><li><b>0.92</b> F1</li><li><b>BERT</b> MLM → classifier</li></ul>
+            <div class="project-foot">
+              <ul class="tag-list small"><li>NLP</li><li>Transformers</li><li>HuggingFace</li></ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="viz-frame small" data-viz="vit">
+            <div class="viz-panel">
+              <svg class="viz-svg" viewBox="0 0 360 200" role="img" aria-label="Animation: a calorimeter image is split into patches, turned into tokens, attended to by a classification token, and classified as electron or photon."></svg>
+              <div class="viz-caption" aria-live="polite"></div>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-head">
+              <h3>Vision Transformers for Particle Physics</h3>
+            </div>
+            <p>A ViT that tells electrons from photons using calorimeter images. Better preprocessing of the detector matrices raised accuracy by 8%. Models were trained on Azure and Google Cloud VMs.</p>
+            <ul class="metric-row"><li><b>0.94</b> ROC-AUC</li><li><b>+8%</b> accuracy from preprocessing</li></ul>
+            <div class="project-foot">
+              <ul class="tag-list small"><li>ViT</li><li>Physics ML</li><li>PyTorch</li></ul>
+              <a class="btn-link" href="https://github.com/Vishak-Bhat30/ML4SCI" target="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===================== SERVICE & HONORS ===================== -->
+    <section class="section wrap" id="service">
+      <h2 class="section-title">Service &amp; Honors</h2>
+      <div class="two-col">
+        <div>
+          <h3 class="subsection-title">Academic service</h3>
+          <ul class="plain-list">
+            <li><span class="pl-key">Reviewer</span> ICLR 2027</li>
+            <li><span class="pl-key">Presenter</span> GSoC '24 Summarization Program (selected among all GSoC students)</li>
+            <li><span class="pl-key">Lead</span> ML Division, CyberLabs, IIT (ISM). Taught and mentored juniors</li>
+          </ul>
+
+          <h3 class="subsection-title">Conferences</h3>
+          <div class="trips">
+            <div class="trip upcoming">
+              <div class="trip-when">Dec 2026</div>
+              <div class="trip-what"><strong>NeurIPS 2026</strong><span>Sydney, Australia</span></div>
+              <span class="badge badge-accent">Upcoming</span>
+            </div>
+            <div class="trip">
+              <div class="trip-when">Apr 2026</div>
+              <div class="trip-what"><strong>ICLR 2026</strong><span>Rio de Janeiro, Brazil</span></div>
+              <span class="badge">Attended</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="subsection-title">Honors &amp; awards</h3>
+          <ul class="honors">
+            <li><span class="h-year">2025</span><div><strong>1st Prize</strong>, AMD AI Premier League Hackathon, IISc Bangalore (₹1.5 lakh)</div></li>
+            <li><span class="h-year"></span><div><strong>Winner</strong>, AgenticAI Hackathon by Microsoft (AI-powered fleet management)</div></li>
+            <li><span class="h-year"></span><div><strong>Kaggle Competitions Expert</strong>: top 0.1% of 185K+ users, 3× bronze (Vesuvius Challenge, NeurIPS Lux AI, "You Can't Please Them All")</div></li>
+            <li><span class="h-year">2024</span><div>Selected presenter, <strong>GSoC '24</strong> Summarization Program</div></li>
+            <li><span class="h-year"></span><div><strong>1st place</strong>, Winter of Code (1000+ participants)</div></li>
+            <li><span class="h-year">2021</span><div>Top 0.03% in <strong>JEE Advanced</strong>; rank 240 in Karnataka CET</div></li>
+          </ul>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ========== FOOTER ========== -->
-  <footer>
-    <div class="footer-content">
-      <p>Designed &amp; Built by Vishak K Bhat</p>
-      <p class="footer-year">&copy; 2026</p>
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© 2026 Vishak K Bhat · <a href="mailto:vishak.bhat5@gmail.com">vishak.bhat5@gmail.com</a></p>
+      <p class="muted">Last updated October 2026</p>
     </div>
   </footer>
 
-  <!-- Scroll to Top Button -->
-  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
-    <i class="fas fa-arrow-up"></i>
-  </button>
+  <div class="tooltip" id="tooltip" role="tooltip" hidden></div>
 
-  <!-- AOS Library -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="shared.js"></script>
+  <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/viz.js" defer></script>
 </body>
 </html>
